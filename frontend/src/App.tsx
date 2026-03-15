@@ -27,11 +27,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 // Get your publishable key from env vars
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || 'pk_test_demo_key_for_development';
-
-// Check if Clerk is properly configured
-if (!PUBLISHABLE_KEY || PUBLISHABLE_KEY === 'pk_test_demo_key_for_development') {
-  console.warn("VITE_CLERK_PUBLISHABLE_KEY is not set. Using demo mode for development.");
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+if (!PUBLISHABLE_KEY) {
+  throw new Error("VITE_CLERK_PUBLISHABLE_KEY is not set. Add it to your .env.local file.");
 }
 
 const AppContent = () => {

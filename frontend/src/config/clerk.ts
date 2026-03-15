@@ -1,7 +1,7 @@
 // Clerk configuration for billing integration
 export const CLERK_CONFIG = {
   // Your Clerk publishable key should be in environment variables
-  publishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || '',
+  publishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
   
   // Billing configuration
   billing: {
